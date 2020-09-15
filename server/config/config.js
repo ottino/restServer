@@ -11,6 +11,22 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 // ================================
+// Vencimiento del Token
+// ================================
+//  60 segundos
+//  60 minutos
+//  24 horas
+//  30 dias
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+// ================================
+// SEED de autenticacion (semilla)
+// ================================
+process.env.SEED = process.env.SEED || 'SEMILLA';
+
+
+
+// ================================
 // Base de datos
 // ================================
 let urlDB;
@@ -20,8 +36,5 @@ if ( process.env.NODE_ENV === 'dev' ) {
 } else {
     urlDB = 'mongodb+srv://maxi:maxi@cluster0-shard-00-01.fwzjl.mongodb.net/testmlab';
 }
-
-urlDB = 'mongodb+srv://maxi:maxi@cluster0-shard-00-01.fwzjl.mongodb.net/admin';
-urlDB = 'mongodb+srv://maxi:maxi@cluster0.fwzjl.mongodb.net/test?retryWrites=true&w=majority';
 
 process.env.URLDB = urlDB;
